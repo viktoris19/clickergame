@@ -1,0 +1,238 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #00adb5;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #00adb5;
+    text-shadow: 0 0 15px rgba(0, 173, 181, 0.7);
+}
+
+header .subtitle {
+    font-size: 1.2rem;
+    color: #a3f7bf;
+    opacity: 0.9;
+}
+
+.game-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .game-area {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.score-board {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.score-board h2, .score-board h3, .click-value {
+    margin-bottom: 20px;
+    color: #a3f7bf;
+    font-size: 1.5rem;
+}
+
+.score-board span {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.click-value {
+    background: rgba(0, 173, 181, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+
+.clicker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#click-button {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #ff5722, #ff9800);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(255, 87, 34, 0.4),
+                inset 0 -10px 20px rgba(0, 0, 0, 0.2),
+                inset 0 10px 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#click-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #ff6b3b, #ffb74d);
+}
+
+#click-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.4),
+                inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hint {
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #b0bec5;
+    text-align: center;
+}
+
+.upgrades {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.upgrades h2 {
+    color: #00adb5;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.upgrades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upgrade-item {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #a3f7bf;
+    transition: all 0.3s ease;
+}
+
+.upgrade-item:hover {
+    background: rgba(163, 247, 191, 0.15);
+    transform: translateX(5px);
+}
+
+.upgrade-info h4 {
+    color: #a3f7bf;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.upgrade-info p {
+    color: #b0bec5;
+    font-size: 0.95rem;
+}
+
+.upgrade-cost {
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button.upgrade-buy {
+    background: linear-gradient(145deg, #393e46, #222831);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button.upgrade-buy:hover {
+    background: linear-gradient(145deg, #00adb5, #007c91);
+}
+
+button.upgrade-buy:disabled {
+    background: #555;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+i {
+    font-size: 1.5rem;
+}
+
+/* Анимация для клика */
+@keyframes clickEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.click-animation {
+    animation: clickEffect 0.1s ease;
+}
